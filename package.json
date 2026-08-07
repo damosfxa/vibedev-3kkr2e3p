@@ -1,0 +1,9 @@
+{
+  "name": "tv-series-episode-tracker",
+  "version": "1.0.0",
+  "description": "A single-page app to track TV show episodes watched",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test.js"
+  }
+}

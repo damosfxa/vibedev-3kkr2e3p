@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Series Episode Tracker</title>
+  <meta name="description" content="Track your TV show episode progress across multi-season series">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>TV Series Episode Tracker</h1>
+      <p>Keep track of every episode you have watched</p>
+    </header>
+
+    <section class="add-form-section">
+      <div class="glass-card">
+        <h2>Add a Show</h2>
+        <form id="add-show-form" novalidate>
+          <div class="form-row">
+            <input type="text" id="show-title" class="form-input" placeholder="Show title" maxlength="100" required aria-label="Show title">
+            <input type="number" id="season-count" class="form-input" placeholder="Seasons" min="1" max="50" required aria-label="Number of seasons" style="max-width: 120px;">
+          </div>
+          <div id="episode-inputs-container" class="episode-inputs-grid" aria-live="polite"></div>
+          <div class="form-row" id="form-error-row" role="alert" aria-live="polite"></div>
+          <button type="submit" class="btn-primary" id="add-show-btn">Add Show</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="shows-section">
+      <h2>Your Shows</h2>
+      <div id="shows-list" class="shows-list"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-state-icon">📺</div>
+        <p>No shows added yet.<br>Add your first show above to start tracking!</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
